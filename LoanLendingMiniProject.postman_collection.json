@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "14f311a5-e506-4fc0-95b9-dc33d33f5630",
+		"name": "LoanLendingMiniProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3891947"
+	},
+	"item": [
+		{
+			"name": "GetLoanOffers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ViewCustomers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ApplyLoan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"loanProductName\": \"Standard\",\n            \"tenureInDays\": 30,\n            \"interestRate\": 12.5,\n            \"maxLimit\": 2500.0\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/loans/getLoanOffers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"loans",
+						"getLoanOffers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerDetails",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerActiveLoans",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "LoanRepayment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"loanOfferID\": 11,\n    \"amount\": 1100.0,\n    \"dueDate\": \"2023-03-28\",\n    \"loanStatus\": \"Active\",\n    \"offerDate\": \"2023-03-13\",\n    \"rate\": 10.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/loans/loanRepayment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"loans",
+						"loanRepayment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
